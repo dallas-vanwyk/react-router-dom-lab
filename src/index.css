@@ -115,3 +115,12 @@ textarea {
 button {
   background-color: #535bf2;
 }
+
+/* added CSS below */
+
+.mailbox {
+  background-color: chartreuse;
+  height: 100 px;
+  width: 100 px;
+  /* will have to fix this ... later */
+}
