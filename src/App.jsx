@@ -8,7 +8,9 @@ import MailboxList from "./components/MailboxList/MailboxList";
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
 import MailboxForm from "./components/MailboxForm/MailboxForm";
 
-const initialState = [];
+const initialState = [
+  { _id: 1, boxOwner: 'your mom', boxSize: 'Large' },
+];
 
 const App = () => {
 
@@ -32,7 +34,7 @@ const App = () => {
 
         <Route
           path="/mailboxes"
-          element={<MailboxList />}
+          element={<MailboxList mailboxes={mailboxes} />}
         />
 
         <Route
@@ -42,7 +44,7 @@ const App = () => {
 
         <Route
           path="/mailboxes/:mailboxId"
-          element={<MailboxDetails />}
+          element={<MailboxDetails mailboxes={mailboxes} />}
         />
 
         <Route
