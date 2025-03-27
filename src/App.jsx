@@ -16,9 +16,9 @@ const App = () => {
 
   const [mailboxes, setMailboxes] = useState(initialState);
 
-  const addMailbox = (newMailboxData) => {
-    newMailboxData._id = mailboxes.length + 1;
-    setMailboxes([...mailboxes, newMailboxData]);
+  const addBox = (newBoxData) => {
+    newBoxData._id = mailboxes.length + 1;
+    setMailboxes([...mailboxes, newBoxData]);
   };
 
   return (
@@ -29,7 +29,7 @@ const App = () => {
 
         <Route
           path="/"
-          element={<h2>Landing Page</h2>}
+          element={<main><h1>Post Office</h1></main>}
         />
 
         <Route
@@ -38,13 +38,18 @@ const App = () => {
         />
 
         <Route
-          path="/mailboxes/new"
-          element={<MailboxForm addMailbox={addMailbox} />}
+          path="/new-mailbox"
+          element={<MailboxForm addBox={addBox} />}
         />
 
         <Route
           path="/mailboxes/:mailboxId"
           element={<MailboxDetails mailboxes={mailboxes} />}
+        />
+
+        <Route
+          path="/mailboxes/*"
+          element={<h2>Error, mailbox not found</h2>}
         />
 
         <Route

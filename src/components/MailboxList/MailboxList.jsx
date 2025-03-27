@@ -9,7 +9,7 @@ const MailboxList = (props) => {
             <ul>
                 {props.mailboxes.map((mailbox) => (
                     // <li key={mailbox.boxOwner}>
-                    <li class='mailbox'>
+                    <li class='mail-box'>
                         <Link to={`/mailboxes/${mailbox._id}`}>
                             {mailbox._id}
                         </Link>
